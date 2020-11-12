@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: Commodore64;
+  src: url('./fonts/C64_Pro_Mono-STYLE.woff');
 }
 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  min-width: 100vw;
+  display: inline-grid;
+  grid-template-areas:
+      'console console'
+      'user map';
+  grid-template-columns: 60vw 40vw;
+  grid-template-rows: 70vh 30vh;
+  font-size: calc(8px + 2vmin);
+  color: white;
+}
+
+.Map-view {
+  grid-area: map;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 1px grey;
+  border-style: dotted;
+}
+
+.Console-view {
+  grid-area: console;
+  border: 1px grey;
+  border-style: dotted;
+  border-radius: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 75%;
+  color: lightslategray;
+  padding: 7px;
+  overflow-y: auto;
+}
+
+.Console-view div {
+  white-space: pre;
+}
+
+.User-view {
+  grid-area: user;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 75%;
+  color: ghostwhite;
+  padding: 34px;
+}
+
+.User-view div input {
+  opacity: 0;
+  position: absolute;
+}
+
+.User-view div .cursor {
+  height: 16px;
+  margin: 0 0 -3px 5px;
+  width: 2px;
+  background: white;
+  opacity: 0;
+  display: inline-block;
+  animation: blink 500ms linear infinite alternate;
+}
+
+.Map-view div {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

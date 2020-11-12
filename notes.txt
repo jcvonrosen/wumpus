@@ -1,0 +1,38 @@
+App.js has:
+x Instructions
+x Determine when to start the game.
+- Move instructions into Game? 
+
+
+Game.cs:
+x This is a new Javascript class, who performs the gameloop and everything inside of that.
+x He needs a way to send back prompts and console writes.
+ x Just pass consoleWrite and prompt as is?
+x He's the only one who knows about the cave
+x Finish the Shoot
+- You only have 5 arrows
+- Wumpus always moves when you shoot
+
+Hud.cs:
+- Needs a reset function.  This is when we restart the game.
+x Display takes full width of container.
+
+
+Hazards:
+- Make a baseHazard class
+ - WarningKey and HazardKey.  These are used to populate the WarningText and HazardText in the Init.
+
+
+Throughout:
+- consistency with variable & function capitalization
+
+
+Bugs:
+x When a bat grabs you, the old currentRoom doesn't get cleared in the HUD
+- When you bump a wumpus, his new room doesn't show up in the HUD
+
+
+Future:
+- Different styles for different consoles.
+x Set the icon
+- Add linting: https://github.com/airbnb/javascript/tree/master/react
